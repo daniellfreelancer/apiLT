@@ -10,6 +10,7 @@ var logger = require('morgan');
 
 const cors = require('cors')
 const usersApp = require('./routes/userAppRoutes')
+const blogPost = require('./routes/blogPostRoutes')
 const fs = require('fs')
 const multer = require('multer')
 const uploadMiddleware = multer({dest: 'uploads/'})
@@ -139,6 +140,7 @@ app.put('/post', uploadMiddleware.single('file'), async (req, res)=>{
 
 //my Routes
 app.use('/blog', usersApp);
+app.use('/news', blogPost)
 
 
 // catch 404 and forward to error handler
