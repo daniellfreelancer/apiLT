@@ -6,7 +6,8 @@ const postBlogSchema = new mongoose.Schema({
     summary: {type: String},
     content: {type: String},
     cover: {type: String},
-    author: {type: mongoose.Types.ObjectId, ref:'admin'}
+    author: {type: mongoose.Types.ObjectId, ref:'admin'},
+    category:{type: String}
 
 },{
     timestamps: true
